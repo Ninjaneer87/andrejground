@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,400,700,900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/ca4b22a445.js" crossorigin="anonymous"></script>
+    <script defer src="index.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <div class="logo"><a class="nav-link" href="javascript:;"><span class="logo-color">Andrej</span>Ground</a></div>
+        <ul class="navbar">
+            <li class="nav-item"><a class="nav-link about-link" href="javascript:;">ABOUT ME</a></li>
+            <li class="nav-item"><a class="nav-link skills-link" href="javascript:;">SKILLS</a></li>
+            <li class="nav-item"><a class="nav-link portfolio-link" href="javascript:;">PORTFOLIO</a></li>
+            <li class="nav-item"><a class="nav-link contact-link" href="javascript:;">CONTACT</a></li>
+            <li class="nav-item"><a class="nav-link resume-link" href="javascript:;">RESUME</a></li>
+        </ul>
+    </header>
+    <div class="paralax">
+        <div class="hero-paralax">
+            <div class="paralax-desc">Hello there! I am Andrej Forgač, a front-end developer.</div>
+            <h1 class="paralax-title">Welcome to the <span class="logo-color">Andrej</span>Ground</h1>
+        </div>
+    </div>
+    <section class="about">
+        <h2 class="about-title">About me</h2>
+        <div class="about-content">
+            Being a pioneer in this area, my value is not yet in my skills, but rather in the potential, curiosity, and strong urge to learn new things daily. Creating something from nothing, solving all kind of problems from macro to micro, makes me feel excited and productive. <br><br> I find good UI and UX one of the most important aspects of modern programming, so I tend to make my projects as user friendly as I am capable of. Beside that, I am equally interested in learning how back-end works, and it is definitely on my roadmap.<br><br> My final goal, as programming is concerned, is to become a full-stack developer.
+        </div>
+        <div class="about-image">
+            <img src="img/aboutme.png" alt="html-css">
+        </div>
+    </section>
+    <section class="skills">
+        <h2 class="skills-title">Skills & technologies I use</h2>
+        <div class="skills-image">
+            <img src="img/skills2.png" alt="skills">
+        </div>
+        <div class="skills-content">
+            Technologies I am most experienced in:
+            <ul class="skills-items">
+                <li class="skills-item">
+                    <i class="fab fa-js-square fa-2x"></i> JavaScript (ES5, ES6+)
+                </li>
+                <li class="skills-item">
+                    <i class="fab fa-html5 fa-2x"></i> HTML
+                </li>
+                <li class="skills-item">
+                    <i class="fab fa-css3-alt fa-2x"></i> CSS
+                </li>
+            </ul>
+        </div>
+        <div class="skills-familiar">
+            More tools & technologies I am familiar with:
+            <ul class="familiar-items">
+                <li class="familiar-item">
+                    Angular
+                </li>
+                <li class="familiar-item">
+                    Node JS
+                </li>
+                <li class="familiar-item">
+                    MongoDB
+                </li>
+                <li class="familiar-item">
+                    Firebase
+                </li>
+                <li class="familiar-item">
+                    PHP
+                </li>
+                <li class="familiar-item">
+                    MySQL
+                </li>
+                <li class="familiar-item">
+                    Git
+                </li>
+                <li class="familiar-item">
+                    Webpack
+                </li>
+                <li class="familiar-item">
+                    Parcel
+                </li>
+                <li class="familiar-item">
+                    Axios
+                </li>
+            </ul>
+        </div>
+    </section>
+    <section class="portfolio">
+        <h2>My portfolio</h2>
+        <div class="project-holder">
+            <div class="project-image">
+                <img class="unclickable" src="img/coinland-full.png" alt="">
+            </div>
+            <div class="project-content">
+                <h3 class="project-title">Coinland</h3>
+                <div class="project-desc">
+                    Application for displaying prices and other data of top 100 cryptocurrencies, connected to <i>coinmarketcap.com</i> API, with some features like :
+                    <ul class="project-features">
+                        <li class="project-feature">- Quick search with listed results</li>
+                        <li class="project-feature">- Portfolio with calculated balances</li>
+                        <li class="project-feature">- Currency converter</li>
+                        <li class="project-feature">- Watchlist - favourites</li>
+                        <li class="project-feature">- Night mode</li>
+                    </ul>
+                    <ul class="project-technologies">
+                        <li class="project-technology">HTML</li>
+                        <li class="project-technology">CSS</li>
+                        <li class="project-technology">JavaScript</li>
+                        <li class="project-technology">Node JS</li>
+                        <li class="project-technology">Axios</li>
+                    </ul>
+                    <div class="project-buttons">
+                        <a href="https://github.com/Ninjaneer87/coinland" target="_blank" class="src-code project-button" title="View source code">
+                            <i class="fas fa-code fa-lg"></i>
+                        </a>
+                        <a href="https://ninjaneer87.github.io/coinland/" target="_blank" class="live-demo project-button" title="Visit site">
+                            <i class="fas fa-link fa-lg"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="project-holder">
+            <div class="project-image">
+                <img class="unclickable" src="img/construction.png" alt="">
+            </div>
+            <div class="project-content">
+                <h3 class="project-title">Share-it</h3>
+                <div class="project-desc">
+                    <div class="planning">In planning phase</div> <br>
+                    Simple social network, based on some features of twitter like:
+                    <ul class="project-features">
+                        <li class="project-feature">- Profiles</li>
+                        <li class="project-feature">- Followers</li>
+                        <li class="project-feature">- Posts</li>
+                        <li class="project-feature">- Likes</li>
+                        <li class="project-feature">- Comments</li>
+                    </ul>
+                    <ul class="project-technologies">
+                        <li class="project-technology">Angular 8</li>
+                        <li class="project-technology">Node JS</li>
+                        <li class="project-technology">MongoDB</li>
+                    </ul>
+                    <div class="project-buttons">
+                        <a href="" target="_blank" class="src-code project-button disabled" title="View source code">
+                            <i class="fas fa-code fa-lg"></i>
+                        </a>
+                        <a href="" target="_blank" class="live-demo project-button disabled" title="Visit site">
+                            <i class="fas fa-link fa-lg"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="contact">
+        <h2 class="contact-title">Reach out to me</h2>
+        <div class="contact-info">
+            <div class="info-item">
+                <div class="info-icon">
+                    <i class="fas fa-location-arrow fa-2x"></i>
+                </div>
+                <div class="info-content">
+                    <h3 class="info-heading">Town, State</h3>
+                    <div class="info-value">Apatin, Serbia</div>
+                </div>
+            </div>
+            <div class="info-item">
+                <div class="info-icon">
+                    <i class="far fa-envelope fa-2x"></i>
+                </div>
+                <div class="info-content">
+                    <h3 class="info-heading">Email</h3>
+                    <div class="info-value">contact@andrejground.com</div>
+                </div>
+            </div>
+            <div class="contact-social">
+                <li class="social-item">
+                    <a href="https://www.facebook.com/andrej.forgac/" target="_blank" class="social-link">
+                        <i class="fab fa-facebook fa-3x unclickable"></i>
+                    </a>
+                </li>
+                <li class="social-item">
+                    <a href="https://twitter.com/nindzenjer" target="_blank" class="social-link">
+                        <i class="fab fa-twitter fa-3x unclickable"></i>
+                    </a>
+                </li>
+                <li class="social-item">
+                    <a href="https://www.instagram.com/nindzenjer/" target="_blank" class="social-link">
+                        <i class="fab fa-instagram fa-3x unclickable"></i>
+                    </a>
+                </li>
+                <li class="social-item">
+                    <a href="https://www.linkedin.com/in/andrejforgac87/" target="_blank" class="social-link">
+                        <i class="fab fa-linkedin-in fa-3x unclickable"></i>
+                    </a>
+                </li>
+                <li class="social-item">
+                    <a href="https://github.com/Ninjaneer87" target="_blank" class="social-link">
+                        <i class="fab fa-github fa-3x unclickable"></i>
+                    </a>
+                </li>
+            </div>
+        </div>
+ 
+    </section>
+    <footer>Copyright</footer>
+    <div class="popup-overlay">
+        <div class="popup-div">
+            <div class="close-popup"><i class="fas fa-window-close fa-2x unclickable"></i></div>
+            <div class="popup-div-content">
+                
+            </div>
+        </div>
+    </div>
+</body>
+</html>
