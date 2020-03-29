@@ -3,15 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,400,700,900&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/ca4b22a445.js" crossorigin="anonymous"></script>
-    <script defer src="index.js"></script>
-    <title>Document</title>
+    <script defer src="js/index.js"></script>
+    <title>AndrejGround</title>
 </head>
 <body>
     <header>
-        <div class="logo"><a class="nav-link" href="javascript:;"><span class="logo-color">Andrej</span>Ground</a></div>
+        <div class="logo">
+            <a class="nav-link logo-link" href="javascript:;">
+                <img src="img/logo.png" alt="" class="logo-image unclickable">
+                <span>
+                    <span class="logo-color">Andrej</span>Ground
+                </span>
+            </a>
+        </div>
         <ul class="navbar">
             <li class="nav-item"><a class="nav-link about-link" href="javascript:;">ABOUT ME</a></li>
             <li class="nav-item"><a class="nav-link skills-link" href="javascript:;">SKILLS</a></li>
@@ -28,17 +35,31 @@
     </div>
     <section class="about">
         <h2 class="about-title">About me</h2>
-        <div class="about-content">
-            Being a pioneer in this area, my value is not yet in my skills, but rather in the potential, curiosity, and strong urge to learn new things daily. Creating something from nothing, solving all kind of problems from macro to micro, makes me feel excited and productive. <br><br> I find good UI and UX one of the most important aspects of modern programming, so I tend to make my projects as user friendly as I am capable of. Beside that, I am equally interested in learning how back-end works, and it is definitely on my roadmap.<br><br> My final goal, as programming is concerned, is to become a full-stack developer.
+        <div class="about-item">
+            <div class="about-icon">
+                <img src="img/aboutme.svg" alt="html-css">
+            </div>
+            <div class="about-content">
+                Being a pioneer in this area, my value is not yet in my skills, but rather in the potential, curiosity, and a strong urge to learn new things daily. <br> Creating something from nothing, solving all kind of problems from macro to micro, makes me feel excited and productive.
+            </div>
         </div>
-        <div class="about-image">
-            <img src="img/aboutme.png" alt="html-css">
-        </div>
+        <div class="about-item">
+            <div class="about-icon">
+                <img src="img/ui-ux.svg" alt="html-css">
+            </div>
+            <div class="about-content">UI and UX are one of the most important aspects of modern programming, in my opinion. So I tend to make my projects as user friendly as I am capable of. <br> Beside that, I am equally interested in learning how back-end works, and it is definitely on my roadmap.
+            </div></div>
+        <div class="about-item">
+            <div class="about-icon">
+                <img src="img/final-goal.svg" alt="html-css">
+            </div>
+            <div class="about-content">My final goal, as programming is concerned, is to become a full-stack developer.
+            </div></div>
     </section>
     <section class="skills">
         <h2 class="skills-title">Skills & technologies I use</h2>
         <div class="skills-image">
-            <img src="img/skills2.png" alt="skills">
+            <img src="img/skills.png" alt="skills">
         </div>
         <div class="skills-content">
             Technologies I am most experienced in:
@@ -92,70 +113,13 @@
     </section>
     <section class="portfolio">
         <h2>My portfolio</h2>
-        <div class="project-holder">
-            <div class="project-image">
-                <img class="unclickable" src="img/coinland-full.png" alt="">
-            </div>
-            <div class="project-content">
-                <h3 class="project-title">Coinland</h3>
-                <div class="project-desc">
-                    Application for displaying prices and other data of top 100 cryptocurrencies, connected to <i>coinmarketcap.com</i> API, with some features like :
-                    <ul class="project-features">
-                        <li class="project-feature">- Quick search with listed results</li>
-                        <li class="project-feature">- Portfolio with calculated balances</li>
-                        <li class="project-feature">- Currency converter</li>
-                        <li class="project-feature">- Watchlist - favourites</li>
-                        <li class="project-feature">- Night mode</li>
-                    </ul>
-                    <ul class="project-technologies">
-                        <li class="project-technology">HTML</li>
-                        <li class="project-technology">CSS</li>
-                        <li class="project-technology">JavaScript</li>
-                        <li class="project-technology">Node JS</li>
-                        <li class="project-technology">Axios</li>
-                    </ul>
-                    <div class="project-buttons">
-                        <a href="https://github.com/Ninjaneer87/coinland" target="_blank" class="src-code project-button" title="View source code">
-                            <i class="fas fa-code fa-lg"></i>
-                        </a>
-                        <a href="https://ninjaneer87.github.io/coinland/" target="_blank" class="live-demo project-button" title="Visit site">
-                            <i class="fas fa-link fa-lg"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
+        <div class="project-image coinland-image">
+            <img class="unclickable" src="img/coinland-full.png" alt="">
+            <h3 class="image-caption unclickable">Coinland</h3>
         </div>
-        <div class="project-holder">
-            <div class="project-image">
-                <img class="unclickable" src="img/construction.png" alt="">
-            </div>
-            <div class="project-content">
-                <h3 class="project-title">Share-it</h3>
-                <div class="project-desc">
-                    <div class="planning">In planning phase</div> <br>
-                    Simple social network, based on some features of twitter like:
-                    <ul class="project-features">
-                        <li class="project-feature">- Profiles</li>
-                        <li class="project-feature">- Followers</li>
-                        <li class="project-feature">- Posts</li>
-                        <li class="project-feature">- Likes</li>
-                        <li class="project-feature">- Comments</li>
-                    </ul>
-                    <ul class="project-technologies">
-                        <li class="project-technology">Angular 8</li>
-                        <li class="project-technology">Node JS</li>
-                        <li class="project-technology">MongoDB</li>
-                    </ul>
-                    <div class="project-buttons">
-                        <a href="" target="_blank" class="src-code project-button disabled" title="View source code">
-                            <i class="fas fa-code fa-lg"></i>
-                        </a>
-                        <a href="" target="_blank" class="live-demo project-button disabled" title="Visit site">
-                            <i class="fas fa-link fa-lg"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
+        <div class="project-image share-it-image">
+            <img class="construction-image unclickable" src="img/construction.png" alt="">
+            <h3 class="image-caption unclickable">Share-it</h3>
         </div>
     </section>
     <section class="contact">
