@@ -1,6 +1,5 @@
 export const createPopup = (htmlContent) => {
     document.querySelector('.popup-div-content').innerHTML = htmlContent;
-    console.log(htmlContent)
     popup('add');
 };
 

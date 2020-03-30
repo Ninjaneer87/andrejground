@@ -1,5 +1,5 @@
 import {popup, createPopup} from './popup';
-import {coinlandHTML, shareItHTML} from './templates';
+import {coinlandHTML, shareItHTML, menuNavbarHTML} from './templates';
 
 document.querySelector('body').addEventListener('scroll', () => {
     if(event.target.scrollTop > 0) {
@@ -11,9 +11,13 @@ document.querySelector('body').addEventListener('scroll', () => {
 
 document.querySelector('.logo').addEventListener('click', () => document.querySelector('body').scrollTop = 0);
 const sections = ['about', 'skills', 'portfolio', 'contact'];
-sections.forEach(section =>
-        document.querySelector(`.${section}-link`).addEventListener('click', () => document.querySelector(`.${section}`).scrollIntoView())
-);
+sections.forEach(section => {
+    document.querySelector(`.${section}-link`).addEventListener('click', () => document.querySelector(`.${section}`).scrollIntoView());
+    document.querySelector(`.menu-${section}-link`).addEventListener('click', () => {
+        document.querySelector(`.${section}-link`).click();
+        document.querySelector('.menu-link').click();
+    });
+});
 
 document.querySelector('.portfolio').addEventListener('click', () => {
     if(event.target.matches('.coinland-image')) {
@@ -23,6 +27,9 @@ document.querySelector('.portfolio').addEventListener('click', () => {
         createPopup(shareItHTML);
     }
 });
+document.querySelector('.menu-link').addEventListener('click',() => {
+    document.querySelector('.menu-navbar-container').classList.toggle('show-menu');
+})
 document.querySelector('.popup-overlay').addEventListener('click', () => {
     if(event.target.matches('.popup-overlay, .close-popup'))
     popup('remove');

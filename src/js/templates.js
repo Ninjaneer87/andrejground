@@ -62,3 +62,13 @@ export const shareItHTML = `
         </div>
     </div>
 `;
+
+export const menuNavbarHTML = `
+    <ul class="menu-navbar">
+        <li class="nav-item"><a class="menu-nav-link about-link" href="javascript:;">ABOUT ME</a></li>
+        <li class="nav-item"><a class="menu-nav-link skills-link" href="javascript:;">SKILLS</a></li>
+        <li class="nav-item"><a class="menu-nav-link portfolio-link" href="javascript:;">PORTFOLIO</a></li>
+        <li class="nav-item"><a class="menu-nav-link contact-link" href="javascript:;">CONTACT</a></li>
+        <li class="nav-item"><a class="menu-nav-link resume-link" href="javascript:;">RESUME</a></li>
+    </ul>
+`;
