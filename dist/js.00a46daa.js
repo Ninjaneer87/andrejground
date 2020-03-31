@@ -152,13 +152,11 @@ exports.popup = popup;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.menuNavbarHTML = exports.shareItHTML = exports.coinlandHTML = void 0;
+exports.shareItHTML = exports.coinlandHTML = void 0;
 var coinlandHTML = "\n    <div class=\"project-holder\">\n        <div class=\"project-content\">\n            <h3 class=\"project-title\">Coinland</h3>\n            <div class=\"project-desc\">\n                Application for displaying prices and other data of top 100 cryptocurrencies, connected to <i>coinmarketcap.com</i> API, with some features like :\n                <ul class=\"project-features\">\n                    <li class=\"project-feature\">- Quick search with listed results</li>\n                    <li class=\"project-feature\">- Portfolio with calculated balances</li>\n                    <li class=\"project-feature\">- Currency converter</li>\n                    <li class=\"project-feature\">- Watchlist - favourites</li>\n                    <li class=\"project-feature\">- Night mode</li>\n                </ul>\n                <ul class=\"project-technologies\">\n                    <li class=\"project-technology\">HTML</li>\n                    <li class=\"project-technology\">CSS</li>\n                    <li class=\"project-technology\">JavaScript</li>\n                    <li class=\"project-technology\">Node JS</li>\n                    <li class=\"project-technology\">Axios</li>\n                </ul>\n                <div class=\"project-buttons\">\n                    <a href=\"https://github.com/Ninjaneer87/coinland\" target=\"_blank\" class=\"src-code project-button\" title=\"View source code\">\n                        <i class=\"fas fa-code fa-lg\"></i>\n                    </a>\n                    <a href=\"https://ninjaneer87.github.io/coinland/\" target=\"_blank\" class=\"live-demo project-button\" title=\"Visit site\">\n                        <i class=\"fas fa-link fa-lg\"></i>\n                    </a>\n                </div>\n            </div>\n        </div>\n    </div>\n";
 exports.coinlandHTML = coinlandHTML;
 var shareItHTML = "        \n    <div class=\"project-holder\">\n        <div class=\"project-content\">\n            <h3 class=\"project-title\">Share-it</h3>\n            <div class=\"project-desc\">\n                <div class=\"planning\">In planning phase</div> <br>\n                Simple social network, based on some features of twitter like:\n                <ul class=\"project-features\">\n                    <li class=\"project-feature\">- Profiles</li>\n                    <li class=\"project-feature\">- Followers</li>\n                    <li class=\"project-feature\">- Posts</li>\n                    <li class=\"project-feature\">- Likes</li>\n                    <li class=\"project-feature\">- Comments</li>\n                </ul>\n                <ul class=\"project-technologies\">\n                    <li class=\"project-technology\">Angular 8</li>\n                    <li class=\"project-technology\">Node JS</li>\n                    <li class=\"project-technology\">MongoDB</li>\n                </ul>\n                <div class=\"project-buttons\">\n                    <a href=\"\" target=\"_blank\" class=\"src-code project-button disabled\" title=\"View source code\">\n                        <i class=\"fas fa-code fa-lg\"></i>\n                    </a>\n                    <a href=\"\" target=\"_blank\" class=\"live-demo project-button disabled\" title=\"Visit site\">\n                        <i class=\"fas fa-link fa-lg\"></i>\n                    </a>\n                </div>\n            </div>\n        </div>\n    </div>\n";
 exports.shareItHTML = shareItHTML;
-var menuNavbarHTML = "\n    <ul class=\"menu-navbar\">\n        <li class=\"nav-item\"><a class=\"menu-nav-link about-link\" href=\"javascript:;\">ABOUT ME</a></li>\n        <li class=\"nav-item\"><a class=\"menu-nav-link skills-link\" href=\"javascript:;\">SKILLS</a></li>\n        <li class=\"nav-item\"><a class=\"menu-nav-link portfolio-link\" href=\"javascript:;\">PORTFOLIO</a></li>\n        <li class=\"nav-item\"><a class=\"menu-nav-link contact-link\" href=\"javascript:;\">CONTACT</a></li>\n        <li class=\"nav-item\"><a class=\"menu-nav-link resume-link\" href=\"javascript:;\">RESUME</a></li>\n    </ul>\n";
-exports.menuNavbarHTML = menuNavbarHTML;
 },{}],"js/index.js":[function(require,module,exports) {
 "use strict";
 
@@ -166,13 +164,36 @@ var _popup = require("./popup");
 
 var _templates = require("./templates");
 
+var aboutPosition = document.querySelector('.about').getBoundingClientRect().top - 200;
+var skillsPosition = document.querySelector('.skills').getBoundingClientRect().top - 200;
+var portfolioPosition = document.querySelector('.portfolio').getBoundingClientRect().top - 200;
+var contactPosition = document.querySelector('.contact').getBoundingClientRect().top - 200;
+var sectionPositionsAndClasses = [[aboutPosition, 'about'], [skillsPosition, 'skills'], [portfolioPosition, 'portfolio'], [contactPosition, 'contact']];
+var allAfterElements = document.querySelectorAll('.after-link'); // scroll
+
 document.querySelector('body').addEventListener('scroll', function () {
   if (event.target.scrollTop > 0) {
     document.querySelector('header').classList.add('background');
+    allAfterElements.forEach(function (element) {
+      return element.classList.remove('after-scale');
+    });
   } else {
     document.querySelector('header').classList.remove('background');
   }
-});
+
+  sectionPositionsAndClasses.forEach(function (section) {
+    if (event.target.scrollTop > section[0]) {
+      allAfterElements.forEach(function (element) {
+        return element.classList.remove('after-scale');
+      });
+      var afterElements = document.querySelectorAll(".".concat(section[1], "-link .after-link ,  .menu-").concat(section[1], "-link .after-link"));
+      afterElements.forEach(function (element) {
+        return element.classList.add("after-scale");
+      });
+    }
+  });
+}); //navigation
+
 document.querySelector('.logo').addEventListener('click', function () {
   return document.querySelector('body').scrollTop = 0;
 });
@@ -185,7 +206,12 @@ sections.forEach(function (section) {
     document.querySelector(".".concat(section, "-link")).click();
     document.querySelector('.menu-link').click();
   });
-});
+}); //hamburger menu
+
+document.querySelector('.menu-link').addEventListener('click', function () {
+  document.querySelector('.menu-navbar-container').classList.toggle('show-menu');
+}); //portfolio popups
+
 document.querySelector('.portfolio').addEventListener('click', function () {
   if (event.target.matches('.coinland-image')) {
     (0, _popup.createPopup)(_templates.coinlandHTML);
@@ -194,31 +220,16 @@ document.querySelector('.portfolio').addEventListener('click', function () {
   if (event.target.matches('.share-it-image')) {
     (0, _popup.createPopup)(_templates.shareItHTML);
   }
-});
-document.querySelector('.menu-link').addEventListener('click', function () {
-  document.querySelector('.menu-navbar-container').classList.toggle('show-menu');
-});
+}); //close popup
+
 document.querySelector('.popup-overlay').addEventListener('click', function () {
   if (event.target.matches('.popup-overlay, .close-popup')) (0, _popup.popup)('remove');
-}); // document.querySelector('.resume-link').addEventListener('click', () => {
-//     console.log('successful: ', coinlandHTML)
-//     createPopup(coinlandHTML);
-// })
-// let element = document.querySelector('.paralax');
-// let rect = element.getBoundingClientRect();
-// console.log(rect.top, rect.right, rect.bottom, rect.left);
-// window.addEventListener('scroll', () => {
-//     console.log(window.scrollY)
-// })
-// let element = document.querySelector('.third');
-// let rect = element.getBoundingClientRect();
-// console.log(rect.top, rect.right, rect.bottom, rect.left);
-// window.addEventListener('scroll', () => {
-//     if(window.scrollY > rect.top-element.offsetHeight) {
-//         console.log('bem ti mater');
-//         element.style.background = 'white';
-//     }
-// })
+}); //close popup on escape key
+
+document.addEventListener('keydown', function () {
+  if (event.keyCode === 27) (0, _popup.popup)('remove');
+  console.log(event.keyCode);
+});
 },{"./popup":"js/popup.js","./templates":"js/templates.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -247,7 +258,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58811" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49836" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

@@ -113,9 +113,25 @@ header {
                 flex-shrink: 1;
                 white-space: nowrap;
                 justify-content: center;
+                position: relative;
             }
             .menu-link {
                 display:none;
+            }
+            .after-link {
+                position: absolute;
+                top: 80%;
+                left: 1rem;
+                right: 1rem;
+                height: 0.2rem;
+                background-color: #fff;
+                z-index: 10;
+                transform: scale(0);
+                transform-origin: left;
+                transition: transform 150ms linear;
+            }
+            .after-scale {
+                transform: scale(1);
             }
 
 
@@ -315,7 +331,7 @@ h3 {
                 margin-right: 1rem;
             }
     .skills-familiar {
-        margin-top: 1rem;
+        /* margin-top: 1rem; */
         padding: 1rem;
         font-size: 1.3rem;
         width: 100vw;
@@ -547,7 +563,7 @@ footer {
     min-height: 40vh;
     justify-content: space-evenly;
     align-items: center;
-    background-color: #333;
+    background-color: rgba(53,54,58,1);;
     color: rgb(180, 180, 180);
     padding: 1rem;
 }   
@@ -880,7 +896,7 @@ footer {
         width: 100%;
         border-radius: 0 10rem 10rem 0;
         border: 1px solid rgba(255, 255, 255, 0.205);
-        border: 1px solid #69d8ee;
+        border: 1px solid #fff;
         border-left: none;
     }
         .menu-nav-item {
@@ -895,6 +911,7 @@ footer {
                 color: #fff;
                 font-size: 1.5rem;
                 display: inline-block;
+                position: relative;
             }
 .show-menu {
     transform: translateX(0);
