@@ -1,19 +1,34 @@
 import {popup, createPopup} from './popup';
 import {coinlandHTML, shareItHTML} from './templates';
 
-const aboutPosition = document.querySelector('.about').getBoundingClientRect().top - 200;
-const skillsPosition = document.querySelector('.skills').getBoundingClientRect().top - 200;
-const portfolioPosition = document.querySelector('.portfolio').getBoundingClientRect().top - 200;
-const contactPosition = document.querySelector('.contact').getBoundingClientRect().top - 200;
-const sectionPositionsAndClasses = [
-    [aboutPosition, 'about'], 
-    [skillsPosition, 'skills'], 
-    [portfolioPosition, 'portfolio'], 
-    [contactPosition, 'contact']
-];
+const sections = ['about', 'skills', 'portfolio', 'contact'];
+const sectionPositions = sections.reduce((acc, section) => {
+    acc[section] = document.querySelector(`.${section}`).getBoundingClientRect().top - 200;
+    return acc;
+}, {});
 const allAfterElements = document.querySelectorAll('.after-link');
+const elementsToFadein = [
+    'about1',
+    'about2',
+    'about3',
+    'skillsImage',
+    'skillsContent',
+    'skillsFamiliar',
+    'portfolio1',
+    'portfolio2',
+    'contactInfo',
+];
+// hide elements on load
+const elementPositions = elementsToFadein.reduce((acc,el) => {
+    const element = document.querySelector(`.${el}`)
+    element.classList.add('fade-animate');
+    element.classList.add('transition');
+    acc[el] = element.getBoundingClientRect().top - ((window.innerWidth < 800)? 400 : 550);
+    return acc;
+}, {});
+console.log(elementPositions);
 
-// scroll
+//scroll
 document.querySelector('body').addEventListener('scroll', () => {
     if(event.target.scrollTop > 0) {
         document.querySelector('header').classList.add('background');
@@ -21,18 +36,21 @@ document.querySelector('body').addEventListener('scroll', () => {
     } else {
         document.querySelector('header').classList.remove('background');
     }
-    sectionPositionsAndClasses.forEach(section => {
-        if(event.target.scrollTop > section[0]) {
+    for(const [key, value] of Object.entries(sectionPositions)) {
+        if(event.target.scrollTop > value) {
             allAfterElements.forEach(element => element.classList.remove('after-scale'));
-            const afterElements = document.querySelectorAll(`.${section[1]}-link .after-link ,  .menu-${section[1]}-link .after-link`);
+            const afterElements = document.querySelectorAll(`.${key}-link .after-link ,  .menu-${key}-link .after-link`);
             afterElements.forEach(element => element.classList.add(`after-scale`));
         }
-    });
+    }
+    for(const [key, value] of Object.entries(elementPositions)) {
+        if(event.target.scrollTop > value)
+        document.querySelector(`.${key}`).classList.remove('fade-animate');
+    }
 });
 
 //navigation
 document.querySelector('.logo').addEventListener('click', () => document.querySelector('body').scrollTop = 0);
-const sections = ['about', 'skills', 'portfolio', 'contact'];
 sections.forEach(section => {
     document.querySelector(`.${section}-link`).addEventListener('click', () => document.querySelector(`.${section}`).scrollIntoView());
     document.querySelector(`.menu-${section}-link`).addEventListener('click', () => {

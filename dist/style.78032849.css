@@ -160,7 +160,7 @@ header {
     top: 0;
     position: absolute;
     display: block;
-    background-image: url(../img/bg.jpg);
+    background-image: url(/bg.c04a5f46.jpg);
     background-size: cover;
     transform-origin: center center 0;
     transform: translateZ(-1px) scale(3);
@@ -929,3 +929,5 @@ footer {
 .transition {
     transition: transform 500ms linear, opacity 500ms linear;
 }
+
+/*# sourceMappingURL=/style.78032849.css.map */

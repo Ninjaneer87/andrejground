@@ -5,8 +5,8 @@ export const coinlandHTML = `
             <div class="project-desc">
                 Application for displaying prices and other data of top 100 cryptocurrencies, connected to <i>coinmarketcap.com</i> API, with some features like :
                 <ul class="project-features">
-                    <li class="project-feature">- Quick search with listed results</li>
-                    <li class="project-feature">- Portfolio with calculated balances</li>
+                    <li class="project-feature">- Search with instant results</li>
+                    <li class="project-feature">- Portfolio & balances</li>
                     <li class="project-feature">- Currency converter</li>
                     <li class="project-feature">- Watchlist - favourites</li>
                     <li class="project-feature">- Night mode</li>
