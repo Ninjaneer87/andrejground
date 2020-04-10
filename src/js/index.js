@@ -1,5 +1,6 @@
 import {popup, createPopup} from './popup';
-import {coinlandHTML, shareItHTML} from './templates';
+import {projectView} from './templates';
+import {projects} from './projects';
 
 const sections = ['about', 'skills', 'portfolio', 'contact'];
 const sectionPositions = sections.reduce((acc, section) => {
@@ -23,10 +24,9 @@ const elementPositions = elementsToFadein.reduce((acc,el) => {
     const element = document.querySelector(`.${el}`)
     element.classList.add('fade-animate');
     element.classList.add('transition');
-    acc[el] = element.getBoundingClientRect().top - ((window.innerWidth < 800)? 400 : 550);
+    acc[el] = element.getBoundingClientRect().top - ((window.innerWidth < 768)? 400 : 500);
     return acc;
 }, {});
-console.log(elementPositions);
 
 //scroll
 document.querySelector('body').addEventListener('scroll', () => {
@@ -44,8 +44,18 @@ document.querySelector('body').addEventListener('scroll', () => {
         }
     }
     for(const [key, value] of Object.entries(elementPositions)) {
-        if(event.target.scrollTop > value)
-        document.querySelector(`.${key}`).classList.remove('fade-animate');
+        if(key !== 'skillsFamiliar') {
+            if(event.target.scrollTop > value)
+            document.querySelector(`.${key}`).classList.remove('fade-animate');
+        } else {
+            if(event.target.scrollTop > value-150)
+            document.querySelector(`.${key}`).classList.remove('fade-animate');
+        }
+    }
+    if(event.target.scrollTop > (sectionPositions.portfolio + 200)) {
+        document.querySelector('body').classList.add('body-bg');
+    } else {
+        document.querySelector('body').classList.remove('body-bg');
     }
 });
 
@@ -60,17 +70,14 @@ sections.forEach(section => {
 });
 //hamburger menu
 document.querySelector('.menu-link').addEventListener('click',() => {
-    document.querySelector('.menu-navbar-container').classList.toggle('show-menu');
+    document.querySelector('.menu-navbar').classList.toggle('show-menu');
 })
 
 //portfolio popups
 document.querySelector('.portfolio').addEventListener('click', () => {
-    if(event.target.matches('.coinland-image')) {
-        createPopup(coinlandHTML);
-    }
-    if(event.target.matches('.share-it-image')) {
-        createPopup(shareItHTML);
-    }
+    projects.forEach(project => {
+        if(event.target.matches(`.${project.cssClass}`)) createPopup(projectView(project));
+    });
 });
 //close popup
 document.querySelector('.popup-overlay').addEventListener('click', () => {

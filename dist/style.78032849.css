@@ -41,7 +41,7 @@ body {
     scrollbar-width: thin;
     scrollbar-color: #141c289c rgba(255, 255, 255, 1);
     font-size: 15px;
-    background-image: url(../img/bg2.jpg);
+    background-image: url(/bg2.10c121cd.jpg);
     background-size: cover;
     background-position: center;
 }
@@ -213,7 +213,7 @@ header {
     top: 0;
     position: absolute;
     display: block;
-    background-image: url(../img/bg.jpg);
+    background-image: url(/bg.c04a5f46.jpg);
     background-size: cover;
     transform-origin: center center 0;
     transform: translateZ(-1px) scale(2.5);
@@ -863,5 +863,7 @@ footer {
 }
 /* background change body */
 .body-bg {
-    background-image: url(../img/bg4.jpg);
+    background-image: url(/bg4.128f0002.jpg);
 }
+
+/*# sourceMappingURL=/style.78032849.css.map */
