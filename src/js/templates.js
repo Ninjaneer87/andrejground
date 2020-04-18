@@ -1,10 +1,10 @@
-const feature = (item) => `
+const feature = item => `
     <li class="project-feature">- ${item}</li>
 `;
-const technology = (item) => `
+const technology = item => `
     <li class="project-technology">${item}</li>
 `;
-export const projectView= (project) => `        
+export const projectView= project => `        
     <div class="project-holder">
         <div class="project-content">
             <h3 class="project-title">${project.title}</h3>
@@ -28,4 +28,16 @@ export const projectView= (project) => `
             </div>
         </div>
     </div>
+`;
+const renderItem = item => `
+    <div class="${item.containerClass}">
+    <div class="project-image ${item.linkClass}">
+        <img class="${item.planning ? 'construction-image': ''} unclickable" src="${item.image}" alt="${item.title}">
+    </div>
+    <h3 class="image-caption unclickable">${item.title}</h3>
+    </div>
+`;
+export const portfolioView = projects => `
+    <h2>My portfolio</h2>
+    ${projects.map(item => renderItem(item)).join('')}
 `;

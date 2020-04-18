@@ -1,7 +1,11 @@
+import '../css/style.css';
+import '@fortawesome/fontawesome-free/js/all';
+
 import {popup, createPopup} from './popup';
-import {projectView} from './templates';
+import {projectView, portfolioView} from './templates';
 import {projects} from './projects';
 
+document.querySelector('.portfolio').innerHTML = portfolioView(projects);
 const sections = ['about', 'skills', 'portfolio', 'contact'];
 const sectionPositions = sections.reduce((acc, section) => {
     acc[section] = document.querySelector(`.${section}`).getBoundingClientRect().top - 200;
@@ -15,10 +19,10 @@ const elementsToFadein = [
     'skillsImage',
     'skillsContent',
     'skillsFamiliar',
-    'portfolio1',
-    'portfolio2',
+    ...projects.map(item => item.containerClass),
     'contactInfo',
 ];
+
 // hide elements on load
 const elementPositions = elementsToFadein.reduce((acc,el) => {
     const element = document.querySelector(`.${el}`)
@@ -52,10 +56,16 @@ document.querySelector('body').addEventListener('scroll', () => {
             document.querySelector(`.${key}`).classList.remove('fade-animate');
         }
     }
-    if(event.target.scrollTop > (sectionPositions.portfolio + 200)) {
-        document.querySelector('body').classList.add('body-bg');
+    //body bg
+    if(event.target.scrollTop > (sectionPositions.about)) {
+        document.querySelector('body').classList.add('body-bg1');
     } else {
-        document.querySelector('body').classList.remove('body-bg');
+        document.querySelector('body').classList.remove('body-bg1');
+    }
+    if(event.target.scrollTop > (sectionPositions.portfolio + 200)) {
+        document.querySelector('body').classList.add('body-bg2');
+    } else {
+        document.querySelector('body').classList.remove('body-bg2');
     }
 });
 
@@ -76,7 +86,7 @@ document.querySelector('.menu-link').addEventListener('click',() => {
 //portfolio popups
 document.querySelector('.portfolio').addEventListener('click', () => {
     projects.forEach(project => {
-        if(event.target.matches(`.${project.cssClass}`)) createPopup(projectView(project));
+        if(event.target.matches(`.${project.linkClass}`)) createPopup(projectView(project));
     });
 });
 //close popup
@@ -87,5 +97,4 @@ document.querySelector('.popup-overlay').addEventListener('click', () => {
 //close popup on escape key
 document.addEventListener('keydown' , () => {
     if(event.keyCode === 27) popup('remove');
-    console.log(event.keyCode);
 });

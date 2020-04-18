@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:100,200,400,700,900&display=swap');
 html {
     height: 100%;
     overflow: hidden;
@@ -41,9 +42,10 @@ body {
     scrollbar-width: thin;
     scrollbar-color: #141c289c rgba(255, 255, 255, 1);
     font-size: 15px;
-    background-image: url(../img/bg2.jpg);
+    /* background-image: url(../img/bg2.jpg); */
     background-size: cover;
     background-position: center;
+    animation: fadeInBody 0.5s linear;
 }
 
 
@@ -831,7 +833,16 @@ footer {
 
 }
 /* ANIMATIONS */
+@keyframes fadeInBody {
+    /* 0%{transform:scale(0)}
+    100%{transform:scale(1)} */
+    
+    /* 0% {transform: translateX(-100%);}
+    100% {transform: translateX(0);} */
 
+    0%{opacity:0}
+    100%{opacity:1}
+}
 @keyframes moveInOut {
     /* 0% {transform: translate(-1%, -1%) skewY(15deg);}
     50% {transform: translate(0%, 0%) skewY(15deg);}
@@ -862,6 +873,9 @@ footer {
     transition: transform 500ms linear, opacity 500ms linear;
 }
 /* background change body */
-.body-bg {
+.body-bg1 {
+    background-image: url(../img/bg2.jpg);
+}
+.body-bg2 {
     background-image: url(../img/bg4.jpg);
 }

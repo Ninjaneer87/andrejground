@@ -1,8 +1,10 @@
 export const projects = [
     {
         title: 'Coinland',
-        cssClass: 'coinland',
+        containerClass: 'portfolio1',
+        linkClass: 'coinland',
         planning: false,
+        image:'img/coinland-full.png',
         desc: 'Application for displaying prices and other data of top 100 cryptocurrencies, connected to <i>coinmarketcap.com</i> API, with some features like :',
         features:[
             'Search with instant results',
@@ -17,8 +19,10 @@ export const projects = [
     },
     {
         title: 'Share-it',
-        cssClass: 'shareIt',
+        containerClass: 'portfolio2',
+        linkClass: 'shareIt',
         planning: true,
+        image:'img/construction.png',
         desc: 'Simple social network, based on some features of twitter like:',
         features:[
             'Profiles',
