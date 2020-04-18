@@ -43,9 +43,10 @@ body {
     scrollbar-color: #141c289c rgba(255, 255, 255, 1);
     font-size: 15px;
     /* background-image: url(../img/bg2.jpg); */
+    background-color: #000;
     background-size: cover;
     background-position: center;
-    animation: fadeInBody 0.5s linear;
+    animation: fadeInBody 1s linear;
 }
 
 
