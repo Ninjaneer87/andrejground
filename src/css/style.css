@@ -3,6 +3,7 @@ html {
     height: 100%;
     overflow: hidden;
     font-size: 15px;
+    font-family: 'Montserrat', sans-serif;
 }
 /* width */
 ::-webkit-scrollbar {
@@ -35,7 +36,6 @@ body {
     height: 100%;
     overflow-y: scroll;
     overflow-x: hidden;
-    font-family: 'Montserrat', sans-serif;
     scroll-behavior: smooth;
     position: relative;
     width: 100vw;
