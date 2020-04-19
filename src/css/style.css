@@ -691,7 +691,7 @@ footer {
             overflow-y: auto;
             max-width: 80vw;
             z-index: 5;
-            max-height: 80vh;
+            max-height: 70vh;
             scrollbar-width: thin;
             scrollbar-color: #141c282a rgba(0, 0, 0, 0.0);
             /* display: flex;
