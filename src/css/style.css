@@ -960,6 +960,9 @@ footer {
     margin-top: -1vw;
     margin-left: -16px;
     opacity:0;
+    /* -webkit-box-shadow: 0px 0px 20px 20px rgba(255,255,255,0.1); */
+    /* -moz-box-shadow: 0px 0px 20px 20px rgba(255,255,255,0.1); */
+    /* box-shadow: 0px 0px 20px 20px rgba(255,255,255,0.1); */
 }
 .loader2 {
     position: absolute;
@@ -976,6 +979,9 @@ footer {
     margin-top: -3vw;
     margin-left: -16px;
     opacity:0;
+    /* -webkit-box-shadow: 0px 0px 20px 20px rgba(255,255,255,0.1); */
+    /* -moz-box-shadow: 0px 0px 20px 20px rgba(255,255,255,0.1); */
+    /* box-shadow: 0px 0px 20px 20px rgba(255,255,255,0.1); */
 }
 .loader3 {
     position: absolute;
@@ -993,9 +999,9 @@ footer {
     margin-left: -16px;
     opacity:0;
 
-    -webkit-box-shadow: 0px 0px 20px 20px rgba(255,255,255,0.1);
-    -moz-box-shadow: 0px 0px 20px 20px rgba(255,255,255,0.1);
-    box-shadow: 0px 0px 20px 20px rgba(255,255,255,0.1);
+    /* -webkit-box-shadow: 0px 0px 20px 20px rgba(255,255,255,0.1); */
+    /* -moz-box-shadow: 0px 0px 20px 20px rgba(255,255,255,0.1); */
+    /* box-shadow: 0px 0px 20px 20px rgba(255,255,255,0.1); */
 }
 /* Safari */
 @-webkit-keyframes spin1 {
