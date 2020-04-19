@@ -845,6 +845,11 @@ footer {
     75%{opacity:0}
     100%{opacity:1}
 }
+/* @keyframes fadeOutLoader {
+    0%{opacity:1; z-index: 20;}
+    75%{opacity:1}
+    100%{opacity:0; z-index: 0;}
+} */
 @keyframes moveInOut {
     /* 0% {transform: translate(-1%, -1%) skewY(15deg);}
     50% {transform: translate(0%, 0%) skewY(15deg);}
@@ -881,3 +886,50 @@ footer {
 .body-bg2 {
     background-image: url(../img/bg4.jpg);
 }
+
+/* loader */
+/* .loader {
+    display: flex;
+    position: absolute;
+    left:0;
+    top:0;
+    width: 100vw;
+    height: 100vh;
+    animation: fadeOutLoader 2s linear;
+    background-color: #000;
+}
+.loader div {
+    display: inline-block;
+    position: absolute;
+    left: 45%;
+    top:50%;
+    width: 16px;
+    background: #69d8ee;
+    animation: loader 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+}
+.loader div:nth-child(1) {
+    position: absolute;
+    left: 45%;
+    animation-delay: -0.24s;
+}
+.loader div:nth-child(2) {
+    position: absolute;
+    left: 50%;
+    animation-delay: -0.12s;
+}
+.loader div:nth-child(3) {
+    position: absolute;
+    left: 55%;
+    animation-delay: 0;
+}
+@keyframes loader {
+    0% {
+    top: 108px;
+    height: 64px;
+    }
+    50%, 100% {
+    top: 124px;
+    height: 32px;
+    background-color: #fff;
+    }
+} */
