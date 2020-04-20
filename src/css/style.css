@@ -128,7 +128,7 @@ header {
         display: flex;
         align-items: center;
         justify-content: center;
-        animation: fadeInBody 1.2s linear;
+        animation: fadeIn 1.2s linear;
         animation-delay: 1s;
     }
         .logo-image {
@@ -158,7 +158,7 @@ header {
         text-align: center;
         justify-content: space-evenly;
         transition: transform 200ms linear;
-        animation: fadeInBody 1.2s linear;
+        animation: fadeIn 1.2s linear;
         animation-delay: 1s;
     }
         .nav-link,
@@ -859,8 +859,8 @@ footer {
     100% {transform: translateX(0);} */
 
     0%{opacity:0}
-    75%{opacity:0; transform: translateY(20px);}
-    100%{opacity:1; transform: translateY(0);}
+    75%{opacity:0;}
+    100%{opacity:1;}
 }
 @keyframes fadeOutLoader {
     0%{opacity:1; z-index: 20;}
