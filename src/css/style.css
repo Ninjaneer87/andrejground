@@ -47,7 +47,6 @@ body {
     background-size: cover;
     background-position: center;
     /* animation: fadeInBody 2s linear; */
-    animation: scrollLockBody 3s linear;
 }
 
 
@@ -129,6 +128,8 @@ header {
         display: flex;
         align-items: center;
         justify-content: center;
+        animation: fadeInBody 1.2s linear;
+        animation-delay: 1s;
     }
         .logo-image {
             width: 3rem;
@@ -157,6 +158,8 @@ header {
         text-align: center;
         justify-content: space-evenly;
         transition: transform 200ms linear;
+        animation: fadeInBody 1.2s linear;
+        animation-delay: 1s;
     }
         .nav-link,
         .nav-link:active,
@@ -238,6 +241,8 @@ header {
             font-weight: 100;   
             line-height: 1.5;
             max-width: 80vw;
+            animation: fadeIn 1.2s linear;
+            animation-delay: 1.3s;
         }
         .paralax-title {
             font-size: 9vw;
@@ -247,6 +252,8 @@ header {
             margin: 0;
             padding: 1em 0;
             position: relative;
+            animation: fadeIn 1.5s linear;
+            animation-delay: 1.3s;
         }
         .paralax-title::after {
             content:attr(data-text);
@@ -835,10 +842,6 @@ footer {
 
 }
 /* ANIMATIONS */
-@keyframes scrollLockBody {
-    0%{overflow-y: hidden;}
-    100%{overflow-y: scroll;}
-}
 @keyframes fadeInBody {
     /* 0%{transform:scale(0)}
     100%{transform:scale(1)} */
@@ -849,6 +852,15 @@ footer {
     0%{opacity:0}
     75%{opacity:0}
     100%{opacity:1}
+}
+@keyframes fadeIn {
+    
+    /* 0% {transform: translateX(-100%);}
+    100% {transform: translateX(0);} */
+
+    0%{opacity:0}
+    50%{opacity:0; transform: translateY(10%);}
+    100%{opacity:1; transform: translateY(0);}
 }
 @keyframes fadeOutLoader {
     0%{opacity:1; z-index: 20;}
