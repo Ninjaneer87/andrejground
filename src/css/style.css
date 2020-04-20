@@ -252,8 +252,8 @@ header {
             margin: 0;
             padding: 1em 0;
             position: relative;
-            animation: fadeIn 1.5s linear;
-            animation-delay: 1.3s;
+            animation: fadeIn 1.2s linear;
+            animation-delay: 1.5s;
         }
         .paralax-title::after {
             content:attr(data-text);
@@ -859,12 +859,12 @@ footer {
     100% {transform: translateX(0);} */
 
     0%{opacity:0}
-    50%{opacity:0; transform: translateY(10%);}
+    75%{opacity:0; transform: translateY(20px);}
     100%{opacity:1; transform: translateY(0);}
 }
 @keyframes fadeOutLoader {
     0%{opacity:1; z-index: 20;}
-    75%{opacity:1}
+    80%{opacity:1}
     100%{opacity:0; z-index: 0;}
 }
 @keyframes moveInOut {
