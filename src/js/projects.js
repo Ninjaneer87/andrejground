@@ -31,7 +31,7 @@ export const projects = [
             'Likes',
             'Comments'
         ],
-        technologies: ['Angular 8', 'Node JS', 'MongoDB'],
+        technologies: ['React', 'Node JS', 'MongoDB'],
         sourceCode: false,
         liveDemo: false
     }

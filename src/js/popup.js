@@ -6,11 +6,4 @@ export const createPopup = (htmlContent) => {
 export const popup = (action) => {
     document.querySelector('.popup-overlay').classList[action]('show-popup');
     document.querySelector('body').classList[action]('no-scroll');
-    if(action === 'add') {
-        document.querySelector('body').classList[action]('perspective');
-    } else {
-        setTimeout(() => {
-            document.querySelector('body').classList[action]('perspective');
-        }, 150);
-    }
 }

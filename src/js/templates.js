@@ -4,7 +4,7 @@ const feature = item => `
 const technology = item => `
     <li class="project-technology">${item}</li>
 `;
-export const projectView= project => `        
+export const projectPopupView= project => `        
     <div class="project-holder">
         <div class="project-content">
             <h3 class="project-title">${project.title}</h3>
