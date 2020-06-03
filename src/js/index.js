@@ -6,7 +6,7 @@ import {projectPopupView, portfolioView} from './templates';
 import {projects} from './projects';
 
 document.querySelector('.portfolio').innerHTML = portfolioView(projects);
-const sections = ['about', 'skills', 'portfolio', 'contact'];
+const sections = ['portfolio', 'skills', 'about', 'contact'];
 const sectionPositions = sections.reduce((acc, section) => {
     acc[section] = document.querySelector(`.${section}`).getBoundingClientRect().top - 200;
     return acc;
