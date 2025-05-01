@@ -1,6 +1,6 @@
 # andrejground
 
-Welcome to the AndrejGround the first version of my portfolio website.
+Welcome to AndrejGround, the first version of my portfolio website.
 
 ## Technologies
 
